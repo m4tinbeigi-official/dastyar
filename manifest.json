@@ -1,0 +1,39 @@
+{
+   "action": {
+      "default_icon": "./assets/icon-128.png"
+   },
+   "background": {
+      "service_worker": "./background.js"
+   },
+   "chrome_url_overrides": {
+      "newtab": "./dist/override/index.html"
+   },
+   "content_scripts": [ {
+      "css": [ "./dist/content-script/style.css" ],
+      "js": [ "./dist/content-script/index.global.js" ],
+      "matches": [ "https://www.google.com/search?q=*", "https://www.google.com/search?client=*" ]
+   } ],
+   "description": "Productivity and focus with Todo List,Calendar,Weather,Background Photo,Dark theme, Organize Bookmark, Folder, Search, Font.",
+   "host_permissions": [ "https://api.dastyar.io/", "https://*.google.com/*", "https://*.gstatic.com/*", "https://google-analytics.com/*" ],
+   "icons": {
+      "128": "./assets/icon-128.png",
+      "16": "./assets/icon-16.png",
+      "32": "./assets/icon-32.png",
+      "48": "./assets/icon-48.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAuz0dcSxGOukR3RSTB4R0nJOvGei+jtZJcjXhH2Kj+EFxMWxemRzhheoNUk0krlnqpsH5gn6QiXwTLuh862dWP8QVAAFv/vgzAGhEUizurOsrY3qHfD60k53cX3XNQu1kHufCrmJ6sFiLi5ZSILsdmPi4WEOPsctM6H5b25Z0jWNHb9BwdIlxAgjczRvAWih4uP5V2gmPwjc2pfdDcoQF5BFirVk+ylKw79hSuQgBvZKf1egUGpD5Vgs/S7iCPlxFKlobyhQ5P77U8pAHtlK23XsoA6g5awSnrXXMtfFKrPOf+HlD2D/jVW7VzzYiZvBC/N7SiNvVSUKC/oh/lJ3xpQIDAQAB",
+   "manifest_version": 3,
+   "name": "Dastyar Personal Assistant in your newtab",
+   "oauth2": {
+      "client_id": "359653590602-cemfb1q62ali4i3n60jn46p38fatmird.apps.googleusercontent.com",
+      "scopes": [ "email profile", "https://www.googleapis.com/auth/calendar.readonly" ]
+   },
+   "optional_permissions": [ "bookmarks" ],
+   "permissions": [ "storage", "identity", "identity.email", "search" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "3.4.5",
+   "web_accessible_resources": [ {
+      "matches": [ "\u003Call_urls>" ],
+      "resources": [ "assets/img/lib/*" ]
+   } ]
+}
